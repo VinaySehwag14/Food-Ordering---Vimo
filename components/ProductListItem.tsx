@@ -7,6 +7,9 @@ type ProductListItemProps = {
   product: Product;
 };
 
+export const defaultPizzaImage =
+  "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png";
+
 const ProductListItem = ({ product }: ProductListItemProps) => {
   return (
     <Link href={`/menu/${product.id}`} asChild>
@@ -14,9 +17,7 @@ const ProductListItem = ({ product }: ProductListItemProps) => {
         <Image
           style={styles.image}
           source={{
-            uri:
-              product.image ??
-              "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png",
+            uri: product.image ?? defaultPizzaImage,
           }}
           resizeMode="contain"
         />
