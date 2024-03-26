@@ -1,9 +1,9 @@
 import { Alert, Image, StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
-import Colors from "@/constants/Colors";
-import Button from "@/components/Button";
+import Colors from "@/src/constants/Colors";
+import Button from "@/src/components/Button";
 import * as ImagePicker from "expo-image-picker";
-import { defaultPizzaImage } from "@/components/ProductListItem";
+import { defaultPizzaImage } from "@/src/components/ProductListItem";
 import { Stack, useLocalSearchParams } from "expo-router";
 const create = () => {
   const [name, setName] = useState("");

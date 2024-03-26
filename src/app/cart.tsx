@@ -3,8 +3,8 @@ import React, { useContext } from "react";
 import { StatusBar } from "expo-status-bar";
 import { CartItem, Product } from "../types";
 import { useCart } from "../providers/CartProvider";
-import CartListItem from "@/components/CartListItem";
-import Button from "@/components/Button";
+import CartListItem from "@/src/components/CartListItem";
+import Button from "@/src/components/Button";
 
 const CartScreen = () => {
   const { items, total } = useCart();
