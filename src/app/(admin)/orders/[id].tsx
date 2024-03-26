@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, FlatList, Pressable } from "react-native";
 import { Stack, useLocalSearchParams } from "expo-router";
 import orders from "../../../../assets/data/orders";
-import OrderListItem from "@/components/OrderListItem";
-import OrderItemListItem from "@/components/OrderItemListItem";
-import Colors from "@/constants/Colors";
+import OrderListItem from "@/src/components/OrderListItem";
+import OrderItemListItem from "@/src/components/OrderItemListItem";
+import Colors from "@/src/constants/Colors";
 import { OrderStatusList } from "@/src/types";
 
 const OrderDetailScreen = () => {

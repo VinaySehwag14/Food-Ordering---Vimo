@@ -2,12 +2,12 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { Link, Stack, useLocalSearchParams, useRouter } from "expo-router";
 import products from "@/assets/data/products";
-import { defaultPizzaImage } from "@/components/ProductListItem";
+import { defaultPizzaImage } from "@/src/components/ProductListItem";
 import { PizzaSize } from "@/src/types";
-import Button from "@/components/Button";
+import Button from "@/src/components/Button";
 import { useCart } from "@/src/providers/CartProvider";
 import { FontAwesome } from "@expo/vector-icons";
-import Colors from "@/constants/Colors";
+import Colors from "@/src/constants/Colors";
 
 const sizes: PizzaSize[] = ["S", "M", "L", "XL"];
 
