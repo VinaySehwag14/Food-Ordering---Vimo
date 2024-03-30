@@ -1,10 +1,10 @@
 import Colors from "@/src/constants/Colors";
-import { Product } from "@/src/types";
+import { Tables } from "@/src/types";
 import { Link, useSegments } from "expo-router";
 import { Image, Pressable, StyleSheet, Text } from "react-native";
 
 type ProductListItemProps = {
-  product: Product;
+  product: Tables<"products">;
 };
 
 export const defaultPizzaImage =
@@ -12,9 +12,10 @@ export const defaultPizzaImage =
 
 const ProductListItem = ({ product }: ProductListItemProps) => {
   const segments = useSegments();
+  const href = `/${(segments && segments[0]) || "default"}/menu/${product.id}`;
 
   return (
-    <Link href={`/${segments[0]}/menu/${product.id}`} asChild>
+    <Link href={href as `/${string}/menu/${number}`} asChild>
       <Pressable style={styles.container}>
         <Image
           style={styles.image}
