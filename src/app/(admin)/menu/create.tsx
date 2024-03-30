@@ -6,6 +6,7 @@ import * as ImagePicker from "expo-image-picker";
 import { defaultPizzaImage } from "@/src/components/ProductListItem";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import {
+  useDeleteProduct,
   useInsertProduct,
   useProduct,
   useUpdateProduct,
@@ -25,6 +26,7 @@ const create = () => {
   const { mutate: insertProduct } = useInsertProduct();
   const { mutate: updateProduct } = useUpdateProduct();
   const { data: updatingProduct } = useProduct(id);
+  const { mutate: deleteProduct } = useDeleteProduct();
   const router = useRouter();
 
   const pickImage = async () => {
@@ -87,8 +89,9 @@ const create = () => {
         },
       }
     );
-    //*resetting after saving in database
   };
+
+  //* for updating product
   const onUpdate = () => {
     if (!validateInput()) {
       return;
@@ -118,8 +121,14 @@ const create = () => {
     }
   };
 
+  //* for deleting product
   const onDelete = () => {
-    console.warn("Delete!!");
+    deleteProduct(id, {
+      onSuccess: () => {
+        resetFields();
+        router.replace("/(admin)");
+      },
+    });
   };
 
   const confirmDelete = () => {
